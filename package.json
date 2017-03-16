@@ -4,7 +4,9 @@
   "description": "Server for Playoff App",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --watch"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage --watchAll"
   },
   "repository": {
     "type": "git",
