@@ -6,8 +6,12 @@
 */
 
 import {List, Map} from 'immutable';
+import Tournament from '../models/tournament';
 
 class Voting {
+    getInitialState() {
+        return Tournament();
+    }
     setCurrentVoteSeats(state, seats) {
         return state.set('currentSeats', List(seats));
     }
@@ -92,6 +96,24 @@ class Voting {
                 return (newState.getIn(['vote', 'seats']).count() === 0) ?
                     this.getNextMatch(newState.set('currentRound', 'winner')) :
                     newState;
+
+                case 'winner':
+                    var nextRound = state.getIn(['round', 'winner']);
+                    var newState = state.merge({
+                        vote: Map({
+                            seats: List(),
+                            tally: Map()
+                        }),
+                        round: Map({
+                            quarterFinals: List(),
+                            simiFinals: List(),
+                            finals: List(),
+                            winner: nextRound
+                        }),
+                        currentRound: 'winner'
+                    });
+
+                    return newState;
 
             default:
                 break;

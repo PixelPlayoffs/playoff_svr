@@ -308,6 +308,43 @@ describe('voting logic', () => {
                 currentRound: 'finals'
             }));
         });
+
+        it('puts winner of finals match into winner', () => {
+            const state = Map({
+                vote: Map({
+                    seats: List.of(
+                        'Artist Four',
+                        'Artist Eight'
+                        ),
+                    tally: Map({
+                        'Artist Four': 1,
+                        'Artist Eight': 2
+                    })
+                }),
+                round: Map({
+                    quarterFinals: List(),
+                    simiFinals: List(),
+                    finals: List(),
+                    winner: List()
+                }),
+                currentRound: 'finals'
+            });
+            const nextState = Voting.getNextMatch(state);
+
+            expect(nextState).toEqual(Map({
+                vote: Map({
+                    seats: List(),
+                    tally: Map()
+                }),
+                round: Map({
+                    quarterFinals: List(),
+                    simiFinals: List(),
+                    finals: List(),
+                    winner: List.of('Artist Eight')
+                }),
+                currentRound: 'winner'
+            }));
+        });
     });
 
     describe('vote', () => {
