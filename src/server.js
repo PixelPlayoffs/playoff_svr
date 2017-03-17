@@ -2,6 +2,7 @@ import Server from 'socket.io';
 
 class SocketServer {
     startServer(store) {
+        console.log('Server Started...');
         const io = new Server().attach(8090);
 
         // TODO: This is pushing the entire state...

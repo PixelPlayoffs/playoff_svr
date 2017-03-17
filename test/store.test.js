@@ -1,6 +1,6 @@
 import {Map, List} from 'immutable';
 import Store from '../src/store';
-import Tournament from '../models/tournament';
+import Tournament from '../src/models/tournament';
 
 describe('store', () => {
     it('is a Redux store configured with the correct reducer', () => {

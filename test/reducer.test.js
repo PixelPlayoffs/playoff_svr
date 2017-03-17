@@ -1,6 +1,6 @@
 import {Map, List} from 'immutable';
 import Reducer from '../src/reducer';
-import Tournament from '../models/tournament';
+import Tournament from '../src/models/tournament';
 
 describe('reducer', () => {
     it('handels SET_SEATS', () => {

@@ -6,7 +6,7 @@
 */
 
 import {List, Map} from 'immutable';
-import Tournament from '../models/tournament';
+import Tournament from './models/tournament';
 
 class Voting {
     getInitialState() {

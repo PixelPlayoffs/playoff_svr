@@ -5,7 +5,7 @@
 
 import {List, Map} from 'immutable';
 import Voting from '../src/voting';
-import Tournament from '../models/tournament';
+import Tournament from '../src/models/tournament';
 
 describe('voting logic', () => {
     describe('setCurrentVoteSeats', () => {
