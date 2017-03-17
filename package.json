@@ -4,7 +4,10 @@
   "description": "Server for Playoff App",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --watch"
+    "start": "babel-node index.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage --watchAll"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,9 @@
   },
   "homepage": "https://github.com/PixelPlayoffs/playoff_svr#readme",
   "dependencies": {
-    "immutable": "^3.8.1"
+    "immutable": "^3.8.1",
+    "redux": "^3.6.0",
+    "socket.io": "^1.7.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
