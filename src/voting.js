@@ -29,10 +29,6 @@ class Voting {
             return 'Tie Match';
         }
 
-        // Need to verify when last two are selected
-        // the winner is still added correctly to the next
-        // round.
-
         switch (currentRound) {
             case 'quarterFinals':
                 var seats = state.getIn(['round', 'quarterFinals']);

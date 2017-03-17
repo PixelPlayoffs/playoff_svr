@@ -3,7 +3,7 @@ import Reducer from '../src/reducer';
 import Tournament from '../models/tournament';
 
 describe('reducer', () => {
-    it('handels SET_ENTRIES', () => {
+    it('handels SET_SEATS', () => {
         const state = Tournament();
         const seats = [
             'Artist One',
@@ -15,7 +15,7 @@ describe('reducer', () => {
             'Artist Seven',
             'Artist Eight'
         ];
-        const action = {type: 'SET_ENTRIES', seats: seats};
+        const action = {type: 'SET_SEATS', seats: seats};
         const nextState = new Reducer(state, action);
 
         expect(nextState).toEqual(Map({
@@ -162,7 +162,7 @@ describe('reducer', () => {
             'Artist Seven',
             'Artist Eight'
         ];
-        const action = {type: 'SET_ENTRIES', seats: seats};
+        const action = {type: 'SET_SEATS', seats: seats};
         const nextState = Reducer(undefined, action);
 
         expect(nextState).toEqual(Map({
@@ -201,7 +201,7 @@ describe('reducer', () => {
             'Artist Eight'
         ];
         const actions = [
-            {type: 'SET_ENTRIES', seats: seats},
+            {type: 'SET_SEATS', seats: seats},
             {type: 'NEXT'},
             {type: 'VOTE', seat: 'Artist One'},
             {type: 'VOTE', seat: 'Artist Two'},
