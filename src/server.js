@@ -12,6 +12,7 @@ class SocketServer {
 
         // TODO: No Auth...
         io.on('connection', (socket) => {
+            console.log('client conenected');
             socket.emit('state', store.getState().toJS());
             socket.on('action', store.dispatch.bind(store));
         });
