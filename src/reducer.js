@@ -7,7 +7,7 @@ export default function reducer(state = Voting.getInitialState(), action) {
         case 'NEXT':
             return Voting.getNextMatch(state);
         case 'VOTE':
-            return Voting.vote(state, action.seat)
+            return Voting.vote(state, action.entry)
     }
     return state;
 }

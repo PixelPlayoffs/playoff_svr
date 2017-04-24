@@ -121,7 +121,7 @@ describe('reducer', () => {
             }),
             currentRound: 'quarterFinals'
         });
-        const action = {type: 'VOTE', seat: 'Artist One'};
+        const action = {type: 'VOTE', entry: 'Artist One'};
         const nextState = new Reducer(state, action);
 
         expect(nextState).toEqual(Map({
@@ -203,33 +203,33 @@ describe('reducer', () => {
         const actions = [
             {type: 'SET_SEATS', seats: seats},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist One'},
-            {type: 'VOTE', seat: 'Artist Two'},
-            {type: 'VOTE', seat: 'Artist Two'},
+            {type: 'VOTE', entry: 'Artist Two'},
+            {type: 'VOTE', entry: 'Artist One'},
+            {type: 'VOTE', entry: 'Artist Two'},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist Three'},
-            {type: 'VOTE', seat: 'Artist Four'},
-            {type: 'VOTE', seat: 'Artist Four'},
+            {type: 'VOTE', entry: 'Artist Three'},
+            {type: 'VOTE', entry: 'Artist Four'},
+            {type: 'VOTE', entry: 'Artist Four'},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist Five'},
-            {type: 'VOTE', seat: 'Artist Six'},
-            {type: 'VOTE', seat: 'Artist Six'},
+            {type: 'VOTE', entry: 'Artist Five'},
+            {type: 'VOTE', entry: 'Artist Six'},
+            {type: 'VOTE', entry: 'Artist Six'},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist Seven'},
-            {type: 'VOTE', seat: 'Artist Eight'},
-            {type: 'VOTE', seat: 'Artist Eight'},
+            {type: 'VOTE', entry: 'Artist Seven'},
+            {type: 'VOTE', entry: 'Artist Eight'},
+            {type: 'VOTE', entry: 'Artist Eight'},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist Two'},
-            {type: 'VOTE', seat: 'Artist Four'},
-            {type: 'VOTE', seat: 'Artist Four'},
+            {type: 'VOTE', entry: 'Artist Two'},
+            {type: 'VOTE', entry: 'Artist Four'},
+            {type: 'VOTE', entry: 'Artist Four'},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist Six'},
-            {type: 'VOTE', seat: 'Artist Eight'},
-            {type: 'VOTE', seat: 'Artist Eight'},
+            {type: 'VOTE', entry: 'Artist Six'},
+            {type: 'VOTE', entry: 'Artist Eight'},
+            {type: 'VOTE', entry: 'Artist Eight'},
             {type: 'NEXT'},
-            {type: 'VOTE', seat: 'Artist Four'},
-            {type: 'VOTE', seat: 'Artist Eight'},
-            {type: 'VOTE', seat: 'Artist Eight'},
+            {type: 'VOTE', entry: 'Artist Four'},
+            {type: 'VOTE', entry: 'Artist Eight'},
+            {type: 'VOTE', entry: 'Artist Eight'},
             {type: 'NEXT'}
         ];
         const finalState = actions.reduce(Reducer, Tournament());
