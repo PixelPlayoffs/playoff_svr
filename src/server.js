@@ -6,9 +6,10 @@ class SocketServer {
         const io = new Server().attach(8090);
 
         // TODO: This is pushing the entire state...
-        store.subscribe(
-            () => io.emit('state', store.getState().toJS())
-        );
+        store.subscribe(() => {
+            console.log(JSON.stringify(store.getState().toJS()));
+            io.emit('state', store.getState().toJS())
+        });
 
         // TODO: No Auth...
         io.on('connection', (socket) => {

@@ -18,3 +18,13 @@ store.dispatch({
 ]
 });
 store.dispatch({type: 'NEXT'});
+var count = 0;
+var interval = setInterval(() => {
+    store.dispatch({type: 'VOTE', seat: 'Artist One'});
+    store.dispatch({type: 'VOTE', seat: 'Artist Two'});
+    store.dispatch({type: 'VOTE', seat: 'Artist Two'});
+    store.dispatch({type: 'NEXT'});
+    count++;
+
+    if (count === 2) { clearInterval(interval) };
+}, 25000);
