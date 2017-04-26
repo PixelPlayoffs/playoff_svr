@@ -39,6 +39,11 @@ describe('store', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         }));
     });

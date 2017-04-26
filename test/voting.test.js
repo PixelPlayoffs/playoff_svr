@@ -65,6 +65,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             }));
         });
@@ -92,6 +97,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             });
             const nextState = Voting.getNextMatch(state);
@@ -117,6 +127,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             }));
         });
@@ -146,6 +161,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             });
             const nextState = Voting.getNextMatch(state);
@@ -171,6 +191,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             }));
         });
@@ -197,6 +222,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             });
             const nextState = Voting.getNextMatch(state);
@@ -218,6 +248,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'simiFinals'
             }));
         });
@@ -243,6 +278,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'simiFinals'
             });
             const nextState = Voting.getNextMatch(state);
@@ -263,6 +303,11 @@ describe('voting logic', () => {
                     ),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'simiFinals'
             }));
         });
@@ -287,6 +332,11 @@ describe('voting logic', () => {
                     ),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'simiFinals'
             });
             const nextState = Voting.getNextMatch(state);
@@ -305,6 +355,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'finals'
             }));
         });
@@ -327,6 +382,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'finals'
             });
             const nextState = Voting.getNextMatch(state);
@@ -342,6 +402,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List.of('Artist Eight')
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'winner'
             }));
         });
@@ -370,6 +435,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             });
             const nextState = Voting.vote(state, 'Artist One');
@@ -397,6 +467,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             }));
         });
@@ -426,6 +501,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             });
             const nextState = Voting.vote(state, 'Artist Two');
@@ -454,6 +534,11 @@ describe('voting logic', () => {
                     finals: List(),
                     winner: List()
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'quarterFinals'
             }));
         });

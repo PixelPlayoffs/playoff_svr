@@ -32,6 +32,8 @@ class Voting {
         switch (currentRound) {
             case 'quarterFinals':
                 var seats = state.getIn(['round', 'quarterFinals']);
+                var videoSource = state.get('videoSource');
+                var timerLen = state.get('timerLen');
                 var nextRound = state.getIn(['round', 'simiFinals']).push(winner);
                 var newState = state.merge({
                     vote: Map({
@@ -44,6 +46,11 @@ class Voting {
                         finals: List(),
                         winner: List()
                     }),
+                    videoSource: videoSource,
+                    vidSourceSwap: false,
+                    timer: '',
+                    timerLen: timerLen,
+                    votingDisabled: false,
                     currentRound: 'quarterFinals'
                 });
 
@@ -53,6 +60,8 @@ class Voting {
 
             case 'simiFinals':
                 var seats = state.getIn(['round', 'simiFinals']);
+                var videoSource = state.get('videoSource');
+                var timerLen = state.get('timerLen');
                 var nextRound = state.getIn(['round', 'finals']).push(winner);
                 var newState = state.merge({
                     vote: Map({
@@ -65,6 +74,11 @@ class Voting {
                         finals: (typeof winner === 'string') ? nextRound : List(),
                         winner: List()
                     }),
+                    videoSource: videoSource,
+                    vidSourceSwap: false,
+                    timer: '',
+                    timerLen: timerLen,
+                    votingDisabled: false,
                     currentRound: 'simiFinals'
                 });
 
@@ -74,6 +88,8 @@ class Voting {
 
             case 'finals':
                 var seats = state.getIn(['round', 'finals']);
+                var videoSource = state.get('videoSource');
+                var timerLen = state.get('timerLen');
                 var nextRound = state.getIn(['round', 'winner']).push(winner);
                 var newState = state.merge({
                     vote: Map({
@@ -86,6 +102,11 @@ class Voting {
                         finals: seats.skip(2),
                         winner: (typeof winner === 'string') ? nextRound : List()
                     }),
+                    videoSource: videoSource,
+                    vidSourceSwap: false,
+                    timer: '',
+                    timerLen: timerLen,
+                    votingDisabled: false,
                     currentRound: 'finals'
                 });
 
@@ -95,6 +116,8 @@ class Voting {
 
                 case 'winner':
                     var nextRound = state.getIn(['round', 'winner']);
+                    var videoSource = state.get('videoSource');
+                    var timerLen = state.get('timerLen');
                     var newState = state.merge({
                         vote: Map({
                             seats: List(),
@@ -106,6 +129,11 @@ class Voting {
                             finals: List(),
                             winner: nextRound
                         }),
+                        videoSource: videoSource,
+                        vidSourceSwap: false,
+                        timer: '',
+                        timerLen: timerLen,
+                        votingDisabled: false,
                         currentRound: 'winner'
                     });
 
@@ -127,11 +155,38 @@ class Voting {
     }
 
     vote(state, seat) {
-        return state.updateIn(
+        let timerCount = state.get('timer');
+        let newState = state.updateIn(['timer'], t => t = timerCount);
+        return newState.updateIn(
             ['vote', 'tally', seat],
             0,
             tally => tally + 1
         );
+    }
+
+    disableVoting(state) {
+        return state.updateIn(
+            ['votingDisabled'], disable => !disable
+        );
+    }
+
+    swapVideoUrl(state, url) {
+        let newState = state.updateIn(
+            ['videoSource'], src => src = url
+        );
+
+        return newState.updateIn(
+            ['vidSourceSwap'], disable => !disable
+        );
+    }
+
+    setTimer(state, count) {
+        let length = state.get('timerLen');
+        return state.updateIn(['timer'], t => t = (count/length)*100);
+    }
+
+    setTimerLen(state, length) {
+        return state.updateIn(['timerLen'], t => t = length);
     }
 }
 

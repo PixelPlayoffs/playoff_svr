@@ -38,6 +38,11 @@ describe('reducer', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         }));
     });
@@ -67,6 +72,11 @@ describe('reducer', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         });
         const action = {type: 'NEXT'};
@@ -93,6 +103,11 @@ describe('reducer', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         }));
     });
@@ -119,6 +134,11 @@ describe('reducer', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         });
         const action = {type: 'VOTE', entry: 'Artist One'};
@@ -147,6 +167,11 @@ describe('reducer', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         }));
     });
@@ -185,6 +210,11 @@ describe('reducer', () => {
                 finals: List(),
                 winner: List()
             }),
+            videoSource: '',
+            vidSourceSwap: false,
+            timer: '',
+            timerLen: '',
+            votingDisabled: false,
             currentRound: 'quarterFinals'
         }));
     });
@@ -245,6 +275,11 @@ describe('reducer', () => {
                     finals: List(),
                     winner: List.of('Artist Eight')
                 }),
+                videoSource: '',
+                vidSourceSwap: false,
+                timer: '',
+                timerLen: '',
+                votingDisabled: false,
                 currentRound: 'winner'
             }));
     });
