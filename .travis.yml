@@ -1,0 +1,26 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "6"
+
+services:
+  - docker
+
+install:
+  - npm install
+
+script:
+  - npm test
+  - npm run build
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker build -t devpixel-on.azurecr.io/prod/playoffsvr:$TRAVIS_BUILD_NUMBER .;
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" devpixel-on.azurecr.io;
+    docker push devpixel-on.azurecr.io/prod/playoffapp:$TRAVIS_BUILD_NUMBER;
+    fi
+
+notifications:
+  webhooks:
+    - http://webhook.site/83b1ecce-8d9b-46db-a050-eb02080d0a6e

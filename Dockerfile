@@ -5,6 +5,6 @@ RUN mkdir -p /usr/src/app
 COPY package.json /usr/src/app/package.json
 WORKDIR /usr/src/app
 RUN npm install --production
-COPY ./dist /usr/src/app
+COPY ./dist .
 EXPOSE 8090
 CMD npm start
