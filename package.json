@@ -4,9 +4,8 @@
   "description": "Server for Playoff App",
   "main": "src/index.js",
   "scripts": {
-    "start": "node WebServer.js",
+    "start": "node index.js",
     "dev-start": "babel-node src/index.js",
-    "web-start": "babel-node src/WebServer.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage --watchAll",
