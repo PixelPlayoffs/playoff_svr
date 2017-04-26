@@ -18,7 +18,7 @@ after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker build -t devpixel-on.azurecr.io/prod/playoffsvr:$TRAVIS_BUILD_NUMBER .;
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" devpixel-on.azurecr.io;
-    docker push devpixel-on.azurecr.io/prod/playoffapp:$TRAVIS_BUILD_NUMBER;
+    docker push devpixel-on.azurecr.io/prod/playoffsvr:$TRAVIS_BUILD_NUMBER;
     fi
 
 notifications:
